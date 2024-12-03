@@ -1,0 +1,6 @@
+@project_f1_be_HostAddress = http://localhost:5013
+
+GET {{project_f1_be_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
