@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\project_f1_be.props" />
-</Project>
