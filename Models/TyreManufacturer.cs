@@ -33,7 +33,7 @@ public partial class TyreManufacturer
 
     public virtual Country Country { get; set; } = null!;
 
-    public virtual ICollection<RaceDatum> RaceData { get; set; } = new List<RaceDatum>();
+    public virtual ICollection<RaceData> RaceData { get; set; } = new List<RaceData>();
 
     public virtual ICollection<SeasonEntrantTyreManufacturer> SeasonEntrantTyreManufacturers { get; set; } = new List<SeasonEntrantTyreManufacturer>();
 

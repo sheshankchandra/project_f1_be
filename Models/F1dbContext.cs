@@ -65,7 +65,7 @@ public partial class F1dbContext : DbContext
 
     public virtual DbSet<RaceConstructorStanding> RaceConstructorStandings { get; set; }
 
-    public virtual DbSet<RaceDatum> RaceData { get; set; }
+    public virtual DbSet<RaceData> RaceData { get; set; }
 
     public virtual DbSet<RaceDriverStanding> RaceDriverStandings { get; set; }
 
@@ -113,7 +113,7 @@ public partial class F1dbContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseSqlite(_configuration.GetConnectionString("F1Database"));
+            optionsBuilder.UseNpgsql(_configuration.GetConnectionString("PostgresConnection"));
         }
     }
 
@@ -1247,7 +1247,7 @@ public partial class F1dbContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull);
         });
 
-        modelBuilder.Entity<RaceDatum>(entity =>
+        modelBuilder.Entity<RaceData>(entity =>
         {
             entity.HasKey(e => new { e.RaceId, e.Type, e.PositionDisplayOrder });
 

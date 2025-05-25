@@ -71,7 +71,7 @@ public partial class Driver
 
     public virtual Country NationalityCountry { get; set; } = null!;
 
-    public virtual ICollection<RaceDatum> RaceData { get; set; } = new List<RaceDatum>();
+    public virtual ICollection<RaceData> RaceData { get; set; } = new List<RaceData>();
 
     public virtual ICollection<RaceDriverStanding> RaceDriverStandings { get; set; } = new List<RaceDriverStanding>();
 

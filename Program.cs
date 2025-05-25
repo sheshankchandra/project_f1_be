@@ -11,7 +11,7 @@ namespace project_f1_be
 
             // Add services to the container.
             builder.Services.AddDbContext<F1dbContext>(options =>
-            options.UseSqlite(builder.Configuration.GetConnectionString("F1Database")));
+                options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
@@ -21,7 +21,7 @@ namespace project_f1_be
             {
                 options.AddPolicy("AllowVueApp", policy =>
                 {
-                    policy.WithOrigins("http://localhost:5173")  // Allow the Vue app URL
+                    policy.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                 });

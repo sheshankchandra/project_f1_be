@@ -53,7 +53,7 @@ public partial class Constructor
 
     public virtual ICollection<RaceConstructorStanding> RaceConstructorStandings { get; set; } = new List<RaceConstructorStanding>();
 
-    public virtual ICollection<RaceDatum> RaceData { get; set; } = new List<RaceDatum>();
+    public virtual ICollection<RaceData> RaceData { get; set; } = new List<RaceData>();
 
     public virtual ICollection<SeasonConstructorStanding> SeasonConstructorStandings { get; set; } = new List<SeasonConstructorStanding>();
 
